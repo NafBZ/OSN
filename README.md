@@ -35,7 +35,6 @@ for testing set -> positive:negative ~ 60:40
 1. Accuracy -> almost 94% on dev set & 90.1% in unseen test set
 
 
-***Accuracy***
 <img src = "Jpeg/accuracy.png" width = "500">
 
 
