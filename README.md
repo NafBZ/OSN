@@ -39,3 +39,6 @@ for testing set -> positive:negative ~ 60:40
 4. Precision
 
 5. Recall
+
+
+![alt text](https://github.com/NafBZ/Online-Social-Network-Behavioral-Analysis/blob/[branch]/image.jpg?raw=true)
