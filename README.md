@@ -2,12 +2,12 @@
 
 **A machine learning classification problem to identify a good or bad friend.
 
-**Datasets : **
+**Datasets :**
 
 1. For training -> train.csv -> created from a survey
 2. For testing -> newtest.csv -> created from a survey
 
-**Class distribution: **
+**Class distribution:**
 
 for training set -> positive:negative ~ 80:20
 for testing set -> positive:negative ~ 60:40
