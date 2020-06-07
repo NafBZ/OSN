@@ -41,4 +41,4 @@ for testing set -> positive:negative ~ 60:40
 5. Recall
 
 
-![alt text](https://github.com/NafBZ/Online-Social-Network-Behavioral-Analysis/blob/[branch]/Accuracy.eps?raw=true)
+![alt text](https://github.com/NafBZ/Online-Social-Network-Behavioral-Analysis/blob/master/Accuracy.eps?raw=true)
