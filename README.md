@@ -32,13 +32,24 @@ for testing set -> positive:negative ~ 60:40
 
 1. Accuracy -> 95% on dev set & 90.1% in unseen test set
 
-2. LogLoss
 
-3. F1-score
-
-4. Precision
-
-5. Recall
+***Accuracy***
+<img src = "Jpeg/accuracy.png" width = "500">
 
 
-![](Jpeg/accuracy.jpg)
+2. ROC Curve
+***ROC***
+<img src = "Jpeg/roc.png" width = "500">
+
+
+***Class Distrbution***
+<img src = "Jpeg/classdist.png" width = "400">
+
+
+3. LogLoss
+
+4. F1-score
+
+5. Precision
+
+6. Recall
