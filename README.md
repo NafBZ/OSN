@@ -41,4 +41,4 @@ for testing set -> positive:negative ~ 60:40
 5. Recall
 
 
-![](Accuracy.eps)
+![](image/Accuracy.eps)
