@@ -32,7 +32,7 @@ for testing set -> positive:negative ~ 60:40
 
 **Evaluation Metrices**
 
-1. Accuracy -> 95% on dev set & 90.1% in unseen test set
+1. Accuracy -> almost 94% on dev set & 90.1% in unseen test set
 
 
 ***Accuracy***
