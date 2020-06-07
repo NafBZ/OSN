@@ -12,6 +12,8 @@
 for training set -> positive:negative ~ 80:20
 for testing set -> positive:negative ~ 60:40
 
+<img src = "Jpeg/classdist.png" width = "400">
+
 *All the features are categorical features.*
 
 **Encoding:** 
@@ -38,12 +40,8 @@ for testing set -> positive:negative ~ 60:40
 
 
 2. ROC Curve
-***ROC***
+
 <img src = "Jpeg/roc.png" width = "500">
-
-
-***Class Distrbution***
-<img src = "Jpeg/classdist.png" width = "400">
 
 
 3. LogLoss
