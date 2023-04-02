@@ -1,0 +1,7 @@
+data:
+  root: '../DataSet/'
+  model_dir: '../model/'
+
+parameters:
+  model: 'svm' #other options are 'tuned_svm', 'logisticRegression', and 'tuned_logisticRegression'
+  save_model: True
