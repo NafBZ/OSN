@@ -4,7 +4,16 @@ from sklearn.metrics import confusion_matrix, classification_report, log_loss
 from sklearn.metrics import roc_auc_score
 import pickle
 
-root = '../model/'
+import yaml
+
+with open("../config.yaml", "r") as stream:
+    try:
+        config = yaml.safe_load(stream)
+    except yaml.YAMLError as error:
+        print(error)
+
+root = config['data']['model_dir']
+
 
 def prepare_inputs(X_train, X_test, model_name = 'input_encoder.sav' , dir = root):
         
@@ -25,7 +34,7 @@ def prepare_inputs(X_train, X_test, model_name = 'input_encoder.sav' , dir = roo
     return X_train_enc, X_test_enc
 
 
-def prepare_targets(y_train, y_test, model_name = 'label_encoder.sav'):
+def prepare_targets(y_train, y_test, model_name = 'label_encoder.sav', dir = root):
 
     #create an instance of Ordinal Encoder
     le = LabelEncoder()

@@ -6,13 +6,13 @@ import numpy as np
 import pickle
 
 
-def support_vector_machine(X_train, X_test, y_train, dir, model_name = 'svm', save_model = False):
+def support_vector_machine(X_train, X_test, y_train, dir, model_name = 'svm', save_model = False, extension = '.sav'):
 
     svm = SVC(probability = True, kernel = 'linear')
     svm.fit(X_train, y_train)
 
     if save_model:
-        with open(dir + model_name, 'wb') as f:
+        with open(dir + model_name + extension, 'wb') as f:
             pickle.dump(svm, f)
 
     y_pred = svm.predict(X_test)
@@ -23,7 +23,7 @@ def support_vector_machine(X_train, X_test, y_train, dir, model_name = 'svm', sa
 
 
 #Tuned SVM
-def tuned_support_vector_machine(X_train, X_test, y_train, dir, model_name = 'tuned_svm', save_model = False):
+def tuned_support_vector_machine(X_train, X_test, y_train, dir, model_name = 'tuned_svm', save_model = False, extension = '.sav'):
     # Instantiate the GridSearchCV object and run the search
     parameters = {'C':[0.1, 1, 10]}
     svm = SVC(kernel = 'rbf', probability = True)
@@ -32,7 +32,7 @@ def tuned_support_vector_machine(X_train, X_test, y_train, dir, model_name = 'tu
 
 
     if save_model:
-        with open(dir + model_name, 'wb') as f:
+        with open(dir + model_name + extension, 'wb') as f:
             pickle.dump(searcher, f)
 
     y_pred = searcher.predict(X_test)
@@ -46,13 +46,13 @@ def tuned_support_vector_machine(X_train, X_test, y_train, dir, model_name = 'tu
 
 
 #Basic LogisticRegression
-def logistic_regression(X_train, X_test, y_train, dir, model_name = 'logisticRegression', save_model = False):
+def logistic_regression(X_train, X_test, y_train, dir, model_name = 'logisticRegression', save_model = False, extension = '.sav'):
 
     logreg = LogisticRegression()
     logreg.fit(X_train, y_train)
 
     if save_model:
-        with open(dir + model_name, 'wb') as f:
+        with open(dir + model_name + extension, 'wb') as f:
             pickle.dump(logreg, f)
 
     y_pred = logreg.predict(X_test)
@@ -63,7 +63,7 @@ def logistic_regression(X_train, X_test, y_train, dir, model_name = 'logisticReg
 
 
 #Tuned LogisticRegression
-def logreg_func_tuned(X_train, X_test, y_train, dir, model_name = 'tuned_logisticRegression', save_model = False):
+def tuned_logistic_regression(X_train, X_test, y_train, dir, model_name = 'tuned_logisticRegression', save_model = False, extension = '.sav'):
     c_space = np.logspace(-5, 8, 15)
     param_grid = {'solver' :['liblinear', 'saga']}
     
@@ -72,7 +72,7 @@ def logreg_func_tuned(X_train, X_test, y_train, dir, model_name = 'tuned_logisti
     logreg_cv.fit(X_train, y_train)
 
     if save_model:
-        with open(dir + model_name, 'wb') as f:
+        with open(dir + model_name + extension, 'wb') as f:
             pickle.dump(logreg_cv, f)
 
 
