@@ -1,6 +1,7 @@
 from dataloader import Dataset
 from sklearn.model_selection import train_test_split
 from utils import *
+from network import *
 
 df = Dataset(train= True)
 

@@ -1,11 +1,7 @@
 from sklearn.preprocessing import OrdinalEncoder, LabelEncoder
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
-from sklearn.model_selection import GridSearchCV
+
 from sklearn.metrics import confusion_matrix, classification_report, log_loss
-from sklearn.metrics import roc_auc_score, roc_curve
-import matplotlib.pyplot as plt
-import seaborn as sns
+from sklearn.metrics import roc_auc_score
 import pickle
 
 root = '../model/'
@@ -56,35 +52,3 @@ def evaluation_matrices(test, predictions, probability):
     print(f'AUC of ROC Curve: {roc_auc}')
 
 
-#Basic SVM
-def support_vector_machine(X_train, X_test, y_train, y_test):
-
-    svm = SVC(probability = True, kernel = 'linear')
-    svm.fit(X_train, y_train)
-
-    y_pred = svm.predict(X_test)
-    y_prob = svm.predict_proba(X_test)[:,1]
-
-
-    return y_pred, y_prob
-
-
-#Tuned SVM
-def tuned_support_vector_machine(X_train, X_test, y_train, y_test):
-    # Instantiate the GridSearchCV object and run the search
-    parameters = {'C':[0.1, 1, 10]}
-    svm = SVC(kernel = 'rbf', probability = True)
-    searcher = GridSearchCV(svm, parameters, cv = 5)
-    searcher.fit(X_train, y_train)
-
-    y_pred = searcher.predict(X_test)
-    y_prob = searcher.predict_proba(X_test)[:,1]
-
-    # Report the best parameters and the corresponding score
-    print("Best CV params", searcher.best_params_)
-    print("Best CV accuracy", searcher.best_score_)
-
-    # Report the test accuracy using these best parameters
-    print("Test accuracy of best grid search hypers:", searcher.score(X_test, y_test))
-
-    return y_pred, y_prob
