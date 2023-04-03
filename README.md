@@ -1,25 +1,15 @@
-# Online-Social-Network-Behavioral-Analysis
+# Online Social Network Behavioral Analysis
 
-**A machine learning classification problem to identify a good or bad friend.
+> This repository contains the experimental copy of the paper [SPY-BOT: Machine learning-enabled post filtering for Social Network-Integrated Industrial Internet of Things](https://www.sciencedirect.com/science/article/abs/pii/S1570870521001256)
 
 **Datasets :**
 
-1. For training -> train.csv -> created from a survey
-2. For testing -> newtest.csv -> created from a survey
+1. [train data](/DataSet/train.csv): Created from a survey
+2. [test data](/DataSet/test.csv): Synthetic Data
 
 **Class distribution:**
 
-for training set -> positive:negative ~ 80:20
-for testing set -> positive:negative ~ 60:40
-
 <img src = "Jpeg/classdist.png" width = "400">
-
-*All the features are categorical features.*
-
-**Encoding:** 
-
-1. OrdinalEncoder
-2. LabelEncoder
 
 
 **Algorithm used:** 
@@ -27,26 +17,36 @@ for testing set -> positive:negative ~ 60:40
 1. Logistic Regression
 2. Support Vector Machine
 
-
-*Hyper Parameter Tuning: GridSearchCV*
-
 **Evaluation Metrices**
 
-1. Accuracy -> almost 94% on dev set & 90.1% in unseen test set
-
+1. Accuracy:  approximately 94% on dev set & 90.1% in unseen test set
 
 <img src = "Jpeg/accuracy.png" width = "500">
-
 
 2. ROC Curve
 
 <img src = "Jpeg/roc.png" width = "500">
 
 
-3. LogLoss
+## How to run the code
 
-4. F1-score
+First clone the repository
 
-5. Precision
+```
+$ git clone https://github.com/NafBZ/OSN.git
+```
 
-6. Recall
+Then go to the Scripts directory and run the main file for traiining.
+
+```
+$ cd Scripts/
+$ pytthon3 main.py
+```
+
+For testing run the following command.
+
+```
+$ pytthon3 test.py
+```
+
+To play with the parameters, change the [config.yaml](/config.yaml) file.
